@@ -1,40 +1,4 @@
-// // chatbot-service/backend/static/widget.js
-// async function sendMessage() {
-//   const input = document.getElementById("user-input");
-//   const message = input.value.trim();
-//   if (!message) return;
-
-//   appendMessage("You", message);
-//   input.value = "";
-
-//   try {
-//     const res = await fetch("/chatbot", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ message })
-//     });
-
-//     const data = await res.json();
-//     appendMessage("Bot", data.response);
-//   } catch (error) {
-//     appendMessage("Bot", "⚠️ Something went wrong!");
-//   }
-// }
-
-// function appendMessage(sender, text) {
-//   const chatBox = document.getElementById("chat-box");
-//   const msgDiv = document.createElement("div");
-//   msgDiv.className = sender === "You" ? "text-right" : "text-left";
-
-//   msgDiv.innerHTML = `
-//     <div class="inline-block px-3 py-2 rounded-lg ${sender === "You" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-900"}">
-//       <strong>${sender}:</strong> ${text}
-//     </div>
-//   `;
-//   chatBox.appendChild(msgDiv);
-//   chatBox.scrollTop = chatBox.scrollHeight;
-// }
-
+// chatbot-service/backend/static/widget.js
 
 // widget.js - embeddable script (drop this on any page)
 // Place this file at: chatbot-service/backend/static/widget.js
@@ -46,7 +10,7 @@
     // try data attribute on script tag: <script src=".../widget.js" data-widget="/widget"></script>
     try {
       const currentScript = document.currentScript;
-      const attr = currentScript && currentScript.getAttribute('data-widget-url');
+      const attr = currentScript && currentScript.getAttribute('https://chatbot-backend-production-f970.up.railway.app/widget');
       if(attr) return attr;
     } catch(e){}
     // fallback: same origin route
