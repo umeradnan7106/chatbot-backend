@@ -14,7 +14,7 @@
       if(attr) return attr;
     } catch(e){}
     // fallback: same origin route
-    return '/static/widget';
+    return '/widget';
   })();
 
   // === Create floating button ===
